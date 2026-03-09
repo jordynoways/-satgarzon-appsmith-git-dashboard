@@ -1,2 +1,0 @@
-SELECT COUNT(*)::int AS total
-FROM public.albaranes;
