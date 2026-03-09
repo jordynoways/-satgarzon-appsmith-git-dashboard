@@ -5,8 +5,8 @@ SELECT
     ROUND(SUM(total_amount) / NULLIF(SUM(invoice_count), 0), 2) AS media_por_parte
 FROM mart.customer_month_summary
 WHERE
-    ({{DatePicker_Inicio.selectedDate}} IS NULL OR (year * 100 + month) >= to_char({{DatePicker_Inicio.selectedDate}}::date, 'YYYYMM')::int)
-    AND ({{DatePicker_Fin.selectedDate}} IS NULL OR (year * 100 + month) <= to_char({{DatePicker_Fin.selectedDate}}::date, 'YYYYMM')::int)
+    ('{{DatePicker_Inicio.selectedDate}}' = '' OR (year * 100 + month) >= to_char('{{DatePicker_Inicio.selectedDate}}'::date, 'YYYYMM')::int)
+    AND ('{{DatePicker_Fin.selectedDate}}' = '' OR (year * 100 + month) <= to_char('{{DatePicker_Fin.selectedDate}}'::date, 'YYYYMM')::int)
 GROUP BY customer_name
 ORDER BY facturacion_total DESC
 LIMIT 50;

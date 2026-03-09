@@ -1,22 +1,17 @@
-WITH resumen AS (
-    SELECT
-        customer_name AS cliente,
-        SUM(invoice_count)::int AS num_partes,
-        ROUND(SUM(total_amount), 2) AS facturacion_total,
-        ROUND(SUM(total_amount) / NULLIF(SUM(invoice_count), 0), 2) AS media_por_parte
-    FROM mart.customer_month_summary
-    GROUP BY customer_name
-)
 SELECT
-    cliente,
-    num_partes,
-    facturacion_total,
-    media_por_parte,
-    CASE
-        WHEN num_partes >= 10 AND media_por_parte >= 400 THEN 'A'
-        WHEN num_partes >= 5 AND media_por_parte >= 200 THEN 'B'
-        WHEN num_partes >= 2 THEN 'C'
-        ELSE 'D'
-    END AS segmento
-FROM resumen
-ORDER BY facturacion_total DESC;
+    customer_name AS cliente,
+    CASE 
+      WHEN SUM(total_amount) > 5000 THEN 'A'
+      WHEN SUM(total_amount) > 2000 THEN 'B'
+      ELSE 'C'
+    END AS segmento,
+    SUM(invoice_count)::int AS num_partes,
+    ROUND(SUM(total_amount), 2) AS facturacion_total,
+    ROUND(SUM(total_amount) / NULLIF(SUM(invoice_count), 0), 2) AS media_por_parte
+FROM mart.customer_month_summary
+WHERE
+    ('{{DatePicker_Inicio.selectedDate}}' = '' OR (year * 100 + month) >= to_char('{{DatePicker_Inicio.selectedDate}}'::date, 'YYYYMM')::int)
+    AND ('{{DatePicker_Fin.selectedDate}}' = '' OR (year * 100 + month) <= to_char('{{DatePicker_Fin.selectedDate}}'::date, 'YYYYMM')::int)
+GROUP BY customer_name
+ORDER BY facturacion_total DESC
+LIMIT 50;

@@ -1,0 +1,18 @@
+INSERT INTO mart.customer_month_summary (customer_id, customer_name, year, month, total_amount, total_tax, invoice_count)
+SELECT
+  cu.id,
+  cu.name,
+  EXTRACT(YEAR FROM d.document_date)::int,
+  EXTRACT(MONTH FROM d.document_date)::int,
+  ROUND(SUM(d.total_amount)::numeric, 2),
+  0,
+  COUNT(*)::int
+FROM core.documents d
+JOIN core.customers cu ON d.customer_id = cu.id
+WHERE d.document_type = 'delivery_note_work'
+  AND d.document_date IS NOT NULL
+GROUP BY cu.id, cu.name, EXTRACT(YEAR FROM d.document_date), EXTRACT(MONTH FROM d.document_date)
+ON CONFLICT (customer_id, year, month) DO UPDATE SET
+  total_amount = EXCLUDED.total_amount,
+  invoice_count = EXCLUDED.invoice_count,
+  customer_name = EXCLUDED.customer_name;
