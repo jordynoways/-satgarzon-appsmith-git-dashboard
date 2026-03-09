@@ -39,12 +39,11 @@
     "importe_total",
     "estado",
     "creado_por",
-    "generado_de",
     "id_stel",
     "color_estado",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1767998233273,
+  "columnUpdatedAt": 1773093983891,
   "columnWidthMap": {
     "estado": 177
   },
@@ -96,9 +95,6 @@
     },
     {
       "key": "primaryColumns.creado_por.computedValue"
-    },
-    {
-      "key": "primaryColumns.generado_de.computedValue"
     },
     {
       "key": "primaryColumns.color_estado.computedValue"
@@ -355,40 +351,6 @@
       "notation": "standard",
       "originalId": "fecha",
       "outputFormat": "DD/MM/YYYY",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "generado_de": {
-      "alias": "generado_de",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tabla_albaranes.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"generado_de\"])) : generado_de })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "generado_de",
-      "index": 8,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "generado_de",
-      "notation": "standard",
-      "originalId": "generado_de",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

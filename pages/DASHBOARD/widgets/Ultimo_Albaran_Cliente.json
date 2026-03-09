@@ -1,22 +1,13 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 42,
-  "topRow": 36,
-  "leftColumn": 42,
-  "rightColumn": 64,
+  "bottomRow": 26,
   "dynamicBindingPathList": [
     {
-      "key": "truncateButtonColor"
+      "key": "text"
     },
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -26,14 +17,19 @@
   "fontStyle": "REGULAR",
   "isVisible": true,
   "key": "cce4f730bd",
+  "leftColumn": 42,
+  "originalBottomRow": 42,
+  "originalTopRow": 36,
   "overflow": "NONE",
   "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
+  "rightColumn": 64,
   "shouldTruncate": false,
   "text": "{{q_ultimo_albaran.data[0] ? q_ultimo_albaran.data[0].cliente : ''}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
+  "topRow": 22,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

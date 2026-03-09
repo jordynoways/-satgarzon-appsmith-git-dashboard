@@ -1,22 +1,10 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 30,
-  "topRow": 24,
-  "leftColumn": 42,
-  "rightColumn": 64,
+  "bottomRow": 18,
   "dynamicBindingPathList": [
     {
-      "key": "truncateButtonColor"
-    },
-    {
       "key": "fontFamily"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -26,14 +14,19 @@
   "fontStyle": "REGULAR",
   "isVisible": true,
   "key": "ac4a5dc9fd",
+  "leftColumn": 42,
+  "originalBottomRow": 30,
+  "originalTopRow": 24,
   "overflow": "NONE",
   "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
+  "rightColumn": 64,
   "shouldTruncate": false,
   "text": "Ultimo albaran",
   "textAlign": "LEFT",
   "textColor": "#716e6e",
+  "topRow": 14,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
