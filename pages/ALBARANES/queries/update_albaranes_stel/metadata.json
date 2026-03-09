@@ -19,7 +19,7 @@
       "path": "/workDeliveryNotes",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "queryParameters": [

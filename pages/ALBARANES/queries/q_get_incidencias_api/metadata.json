@@ -19,7 +19,7 @@
       "path": "/incidents",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "queryParameters": [
