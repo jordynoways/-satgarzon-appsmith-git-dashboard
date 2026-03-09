@@ -5,9 +5,6 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 130,
-  "topRow": 92,
-  "leftColumn": 0,
-  "rightColumn": 30,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -36,6 +33,41 @@
     "dia": 150,
     "registros_sincronizados": 150
   },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.dia.computedValue"
+    },
+    {
+      "key": "primaryColumns.registros_sincronizados.computedValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "003618346b",
+  "leftColumn": 0,
+  "multiRowSelection": false,
+  "parentId": "0",
   "primaryColumns": {
     "dia": {
       "alias": "dia",
@@ -106,46 +138,14 @@
       "width": 150
     }
   },
-  "defaultPageSize": 0,
-  "defaultSelectedRowIndex": 0,
-  "delimiter": ",",
-  "enableClientSideSearch": true,
-  "dynamicBindingPathList": [
-    {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.dia.computedValue"
-    },
-    {
-      "key": "primaryColumns.registros_sincronizados.computedValue"
-    }
-  ],
-  "dynamicTriggerPathList": [],
-  "isVisible": true,
-  "isSortable": true,
-  "key": "b1519f8164",
-  "multiRowSelection": false,
-  "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "searchKey": "",
   "tableData": "{{q_sync_gaps.data}}",
+  "topRow": 92,
   "type": "TABLE_WIDGET_V2",
   "version": 1,
   "widgetId": "667efea75c",
-  "widgetName": "Tabla_Sync_Gaps",
-  "searchKey": "",
-  "isVisibleSearch": true,
-  "isVisibleFilters": false,
-  "isVisiblePagination": true,
-  "isVisibleDownload": true
+  "widgetName": "Tabla_Sync_Gaps"
 }

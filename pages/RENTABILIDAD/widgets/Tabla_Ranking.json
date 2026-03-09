@@ -5,9 +5,6 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 120,
-  "topRow": 72,
-  "leftColumn": 0,
-  "rightColumn": 64,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -37,11 +34,55 @@
   ],
   "columnWidthMap": {
     "cliente": 250,
-    "segmento": 100,
-    "num_partes": 100,
     "facturacion_total": 150,
-    "media_por_parte": 150
+    "media_por_parte": 150,
+    "num_partes": 100,
+    "segmento": 100
   },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.cliente.computedValue"
+    },
+    {
+      "key": "primaryColumns.segmento.computedValue"
+    },
+    {
+      "key": "primaryColumns.num_partes.computedValue"
+    },
+    {
+      "key": "primaryColumns.facturacion_total.computedValue"
+    },
+    {
+      "key": "primaryColumns.media_por_parte.computedValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "5d6ee26903",
+  "leftColumn": 0,
+  "multiRowSelection": false,
+  "parentId": "0",
   "primaryColumns": {
     "cliente": {
       "alias": "cliente",
@@ -76,74 +117,6 @@
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 250
-    },
-    "segmento": {
-      "alias": "segmento",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Tabla_Ranking.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"segmento\"])) : segmento })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "segmento",
-      "index": 1,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Segmento",
-      "notation": "standard",
-      "originalId": "segmento",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 100
-    },
-    "num_partes": {
-      "alias": "num_partes",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Tabla_Ranking.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"num_partes\"])) : num_partes })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "num_partes",
-      "index": 2,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Partes",
-      "notation": "standard",
-      "originalId": "num_partes",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 100
     },
     "facturacion_total": {
       "alias": "facturacion_total",
@@ -212,57 +185,84 @@
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
+    },
+    "num_partes": {
+      "alias": "num_partes",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Tabla_Ranking.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"num_partes\"])) : num_partes })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "num_partes",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Partes",
+      "notation": "standard",
+      "originalId": "num_partes",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 100
+    },
+    "segmento": {
+      "alias": "segmento",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Tabla_Ranking.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"segmento\"])) : segmento })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "segmento",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Segmento",
+      "notation": "standard",
+      "originalId": "segmento",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 100
     }
   },
-  "defaultPageSize": 0,
-  "defaultSelectedRowIndex": 0,
-  "delimiter": ",",
-  "enableClientSideSearch": true,
-  "dynamicBindingPathList": [
-    {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.cliente.computedValue"
-    },
-    {
-      "key": "primaryColumns.segmento.computedValue"
-    },
-    {
-      "key": "primaryColumns.num_partes.computedValue"
-    },
-    {
-      "key": "primaryColumns.facturacion_total.computedValue"
-    },
-    {
-      "key": "primaryColumns.media_por_parte.computedValue"
-    }
-  ],
-  "dynamicTriggerPathList": [],
-  "isVisible": true,
-  "isSortable": true,
-  "key": "166dc0641c",
-  "multiRowSelection": false,
-  "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
   "tableData": "{{q_rentabilidad_ranking.data}}",
+  "topRow": 72,
   "type": "TABLE_WIDGET_V2",
   "version": 1,
   "widgetId": "bb3834c3cf",
-  "widgetName": "Tabla_Ranking",
-  "searchKey": "",
-  "isVisibleSearch": true,
-  "isVisibleFilters": false,
-  "isVisiblePagination": true,
-  "isVisibleDownload": true
+  "widgetName": "Tabla_Ranking"
 }

@@ -5,9 +5,6 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 90,
-  "topRow": 47,
-  "leftColumn": 0,
-  "rightColumn": 64,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -40,6 +37,47 @@
     "ingested_at": 200,
     "source_updated_at": 200
   },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.entity.computedValue"
+    },
+    {
+      "key": "primaryColumns.external_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.ingested_at.computedValue"
+    },
+    {
+      "key": "primaryColumns.source_updated_at.computedValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "aa51ffc8cc",
+  "leftColumn": 0,
+  "multiRowSelection": false,
+  "parentId": "0",
   "primaryColumns": {
     "entity": {
       "alias": "entity",
@@ -178,52 +216,14 @@
       "width": 200
     }
   },
-  "defaultPageSize": 0,
-  "defaultSelectedRowIndex": 0,
-  "delimiter": ",",
-  "enableClientSideSearch": true,
-  "dynamicBindingPathList": [
-    {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.entity.computedValue"
-    },
-    {
-      "key": "primaryColumns.external_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.ingested_at.computedValue"
-    },
-    {
-      "key": "primaryColumns.source_updated_at.computedValue"
-    }
-  ],
-  "dynamicTriggerPathList": [],
-  "isVisible": true,
-  "isSortable": true,
-  "key": "4e55bb8d5c",
-  "multiRowSelection": false,
-  "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
   "tableData": "{{q_sync_historial.data}}",
+  "topRow": 47,
   "type": "TABLE_WIDGET_V2",
   "version": 1,
   "widgetId": "37528ad57c",
-  "widgetName": "Tabla_Sync_Historial",
-  "searchKey": "",
-  "isVisibleSearch": true,
-  "isVisibleFilters": false,
-  "isVisiblePagination": true,
-  "isVisibleDownload": true
+  "widgetName": "Tabla_Sync_Historial"
 }

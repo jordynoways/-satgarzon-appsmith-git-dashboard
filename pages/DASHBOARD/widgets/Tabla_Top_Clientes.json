@@ -5,9 +5,6 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 70,
-  "topRow": 24,
-  "leftColumn": 0,
-  "rightColumn": 40,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -38,6 +35,44 @@
     "num_albaranes": 120,
     "total": 150
   },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.cliente.computedValue"
+    },
+    {
+      "key": "primaryColumns.num_albaranes.computedValue"
+    },
+    {
+      "key": "primaryColumns.total.computedValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "fbb9cff0b5",
+  "leftColumn": 0,
+  "multiRowSelection": false,
+  "parentId": "0",
   "primaryColumns": {
     "cliente": {
       "alias": "cliente",
@@ -142,49 +177,14 @@
       "width": 150
     }
   },
-  "defaultPageSize": 0,
-  "defaultSelectedRowIndex": 0,
-  "delimiter": ",",
-  "enableClientSideSearch": true,
-  "dynamicBindingPathList": [
-    {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.cliente.computedValue"
-    },
-    {
-      "key": "primaryColumns.num_albaranes.computedValue"
-    },
-    {
-      "key": "primaryColumns.total.computedValue"
-    }
-  ],
-  "dynamicTriggerPathList": [],
-  "isVisible": true,
-  "isSortable": true,
-  "key": "4ea6b0d65b",
-  "multiRowSelection": false,
-  "parentId": "0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
+  "rightColumn": 40,
+  "searchKey": "",
   "tableData": "{{q_top_clientes_mes.data}}",
+  "topRow": 24,
   "type": "TABLE_WIDGET_V2",
   "version": 1,
   "widgetId": "2d1d4344d8",
-  "widgetName": "Tabla_Top_Clientes",
-  "searchKey": "",
-  "isVisibleSearch": true,
-  "isVisibleFilters": false,
-  "isVisiblePagination": true,
-  "isVisibleDownload": true
+  "widgetName": "Tabla_Top_Clientes"
 }
