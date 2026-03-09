@@ -1,0 +1,42 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 22,
+  "topRow": 14,
+  "leftColumn": 0,
+  "rightColumn": 20,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.5rem",
+  "fontStyle": "BOLD",
+  "isVisible": true,
+  "key": "5417aff77b",
+  "overflow": "NONE",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "shouldTruncate": false,
+  "text": "{{q_kpi_facturacion_mes.data[0] && q_kpi_facturacion_mes.data[0].facturacion_mes ? Number(q_kpi_facturacion_mes.data[0].facturacion_mes).toLocaleString('es-ES', {minimumFractionDigits:2}) + ' EUR' : '...' }}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "a1fc39db33",
+  "widgetName": "Kpi_Facturacion_Valor"
+}

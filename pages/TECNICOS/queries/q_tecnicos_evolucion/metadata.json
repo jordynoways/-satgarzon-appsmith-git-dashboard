@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Evolución mensual por técnico (últimos 6 meses) - para gráfico de líneas\r\nSELECT\r\n  TO_CHAR(date_trunc('month', a.fecha), 'YYYY-MM') AS mes,\r\n  TO_CHAR(date_trunc('month', a.fecha), 'Mon YY') AS mes_label,\r\n  COALESCE(e.nombre_completo, 'Técnico ' || a.creado_por_id::text) AS tecnico,\r\n  COUNT(*)::int AS num_partes,\r\n  ROUND(SUM(a.importe_total), 2) AS facturacion\r\nFROM public.albaranes a\r\nLEFT JOIN public.empleados_stel_clean e ON a.creado_por_id::text = e.id_stel\r\nWHERE a.fecha >= date_trunc('month', CURRENT_DATE) - INTERVAL '5 months'\r\nGROUP BY date_trunc('month', a.fecha),\r\n         COALESCE(e.nombre_completo, 'Técnico ' || a.creado_por_id::text)\r\nORDER BY mes ASC, tecnico ASC;\r\n",
+      "body": "SELECT\n    date_trunc('month', document_date)::date AS mes,\n    TO_CHAR(document_date, 'Mon YYYY') AS periodo,\n    CASE creator_id::text\n        WHEN '1' THEN 'Jorge Garzón'\n        WHEN '23196' THEN 'Daniel Garzón'\n        WHEN '190' THEN 'Marco Garzón'\n    END AS tecnico,\n    COUNT(*)::int AS num_albaranes,\n    ROUND(SUM(total_amount), 2) AS facturacion\nFROM core.documents\nWHERE document_type = 'delivery_note_work'\n    AND creator_id::text IN ('1', '23196', '190')\n    AND document_date >= date_trunc('month', CURRENT_DATE) - INTERVAL '5 months'\nGROUP BY mes, periodo, creator_id\nORDER BY mes DESC, facturacion DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

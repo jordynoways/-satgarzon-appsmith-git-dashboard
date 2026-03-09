@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Producción semanal por técnico (últimas 8 semanas) - para gráfico de barras agrupadas\r\nSELECT\r\n  TO_CHAR(date_trunc('week', a.fecha), 'YYYY-\"W\"IW') AS semana,\r\n  TO_CHAR(date_trunc('week', a.fecha), 'DD/MM') || '-' || TO_CHAR(date_trunc('week', a.fecha) + INTERVAL '6 days', 'DD/MM') AS semana_label,\r\n  COALESCE(e.nombre_completo, 'Técnico ' || a.creado_por_id::text) AS tecnico,\r\n  COUNT(*)::int AS num_partes,\r\n  ROUND(SUM(a.importe_total), 2) AS facturacion\r\nFROM public.albaranes a\r\nLEFT JOIN public.empleados_stel_clean e ON a.creado_por_id::text = e.id_stel\r\nWHERE a.fecha >= date_trunc('week', CURRENT_DATE) - INTERVAL '7 weeks'\r\nGROUP BY date_trunc('week', a.fecha),\r\n         COALESCE(e.nombre_completo, 'Técnico ' || a.creado_por_id::text)\r\nORDER BY semana ASC, tecnico ASC;\r\n",
+      "body": "SELECT\n    date_trunc('week', document_date)::date AS semana,\n    CASE creator_id::text\n        WHEN '1' THEN 'Jorge Garzón'\n        WHEN '23196' THEN 'Daniel Garzón'\n        WHEN '190' THEN 'Marco Garzón'\n    END AS tecnico,\n    COUNT(*)::int AS num_albaranes,\n    ROUND(SUM(total_amount), 2) AS facturacion\nFROM core.documents\nWHERE document_type = 'delivery_note_work'\n    AND creator_id::text IN ('1', '23196', '190')\n    AND document_date >= CURRENT_DATE - INTERVAL '8 weeks'\nGROUP BY semana, creator_id\nORDER BY semana DESC, facturacion DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

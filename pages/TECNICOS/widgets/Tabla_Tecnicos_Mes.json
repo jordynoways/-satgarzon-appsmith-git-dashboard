@@ -1,0 +1,124 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 40,
+  "topRow": 10,
+  "leftColumn": 0,
+  "rightColumn": 30,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "tecnico",
+    "num_albaranes",
+    "facturacion"
+  ],
+  "columnWidthMap": {
+    "tecnico": 200,
+    "num_albaranes": 120,
+    "facturacion": 150
+  },
+  "primaryColumns": {
+    "tecnico": {
+      "alias": "tecnico",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "tecnico",
+      "index": 0,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Tecnico",
+      "originalId": "tecnico",
+      "width": 200
+    },
+    "num_albaranes": {
+      "alias": "num_albaranes",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "num_albaranes",
+      "index": 1,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Albaranes",
+      "originalId": "num_albaranes",
+      "width": 120
+    },
+    "facturacion": {
+      "alias": "facturacion",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "facturacion",
+      "index": 2,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Facturacion EUR",
+      "originalId": "facturacion",
+      "width": 150
+    }
+  },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "enableClientSideSearch": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isVisible": true,
+  "isSortable": true,
+  "key": "5142c441f5",
+  "multiRowSelection": false,
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "tableData": "{{q_tecnicos_mes.data}}",
+  "type": "TABLE_WIDGET_V2",
+  "version": 1,
+  "widgetId": "eb5ac82c42",
+  "widgetName": "Tabla_Tecnicos_Mes",
+  "searchKey": "",
+  "isVisibleSearch": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleDownload": true
+}

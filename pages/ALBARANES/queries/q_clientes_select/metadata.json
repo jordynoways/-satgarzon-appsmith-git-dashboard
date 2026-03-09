@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Lista de clientes para el dropdown de filtros\r\n-- Bind a Select widget con: label = nombre, value = nombre\r\nSELECT DISTINCT\r\n  COALESCE(c.nombre_fiscal, a.cliente_nombre, '(Sin cliente)') AS nombre\r\nFROM public.albaranes a\r\nLEFT JOIN public.clientes c ON a.cliente_id_stel::text = c.id_stel::text\r\nWHERE COALESCE(c.nombre_fiscal, a.cliente_nombre) IS NOT NULL\r\n  AND COALESCE(c.nombre_fiscal, a.cliente_nombre) != ''\r\nORDER BY nombre ASC;\r\n",
+      "body": "SELECT DISTINCT c.name AS nombre\nFROM core.customers c\nINNER JOIN core.documents d ON d.customer_id = c.id\nWHERE d.document_type = 'delivery_note_work'\nORDER BY nombre ASC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

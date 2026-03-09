@@ -1,0 +1,158 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 45,
+  "topRow": 10,
+  "leftColumn": 0,
+  "rightColumn": 64,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "entity",
+    "total_registros",
+    "ultima_actualizacion",
+    "horas_desde_sync",
+    "semaforo"
+  ],
+  "columnWidthMap": {
+    "entity": 150,
+    "total_registros": 120,
+    "ultima_actualizacion": 200,
+    "horas_desde_sync": 100,
+    "semaforo": 120
+  },
+  "primaryColumns": {
+    "entity": {
+      "alias": "entity",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "entity",
+      "index": 0,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Entidad",
+      "originalId": "entity",
+      "width": 150
+    },
+    "total_registros": {
+      "alias": "total_registros",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "total_registros",
+      "index": 1,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Registros",
+      "originalId": "total_registros",
+      "width": 120
+    },
+    "ultima_actualizacion": {
+      "alias": "ultima_actualizacion",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "ultima_actualizacion",
+      "index": 2,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Ultima sync",
+      "originalId": "ultima_actualizacion",
+      "width": 200
+    },
+    "horas_desde_sync": {
+      "alias": "horas_desde_sync",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "horas_desde_sync",
+      "index": 3,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Horas",
+      "originalId": "horas_desde_sync",
+      "width": 100
+    },
+    "semaforo": {
+      "alias": "semaforo",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "semaforo",
+      "index": 4,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Estado",
+      "originalId": "semaforo",
+      "width": 120
+    }
+  },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "enableClientSideSearch": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isVisible": true,
+  "isSortable": true,
+  "key": "109fcd9768",
+  "multiRowSelection": false,
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "tableData": "{{q_sync_estado.data}}",
+  "type": "TABLE_WIDGET_V2",
+  "version": 1,
+  "widgetId": "e8c4148cda",
+  "widgetName": "Tabla_Sync_Estado",
+  "searchKey": "",
+  "isVisibleSearch": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleDownload": true
+}

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Último albaran y estado de sincronización\r\nSELECT\r\n  MAX(fecha)::date AS ultimo_albaran_fecha,\r\n  MAX(ultima_actualizacion) AS ultima_sync,\r\n  ROUND(EXTRACT(EPOCH FROM (NOW() - MAX(ultima_actualizacion))) / 3600, 1) AS horas_desde_sync,\r\n  COUNT(CASE WHEN fecha::date = CURRENT_DATE THEN 1 END)::int AS albaranes_hoy,\r\n  COUNT(CASE WHEN fecha >= date_trunc('week', CURRENT_DATE) THEN 1 END)::int AS albaranes_semana\r\nFROM public.albaranes;\r\n",
+      "body": "SELECT\n    d.document_number AS referencia,\n    COALESCE(c.name, '—') AS cliente,\n    d.document_date AS fecha,\n    d.total_amount AS importe,\n    CASE d.document_state_id\n        WHEN 87 THEN 'Pendiente de facturar'\n        WHEN 82 THEN 'Facturado'\n        WHEN 124 THEN 'Cerrado'\n        WHEN 969948 THEN 'Aprobado'\n        ELSE 'Estado ' || COALESCE(d.document_state_id::text, '—')\n    END AS estado\nFROM core.documents d\nLEFT JOIN core.customers c ON d.customer_id = c.id\nWHERE d.document_type = 'delivery_note_work'\nORDER BY d.document_date DESC, d.id DESC\nLIMIT 1;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

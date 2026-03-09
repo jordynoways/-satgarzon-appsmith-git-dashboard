@@ -1,0 +1,42 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 54,
+  "topRow": 48,
+  "leftColumn": 42,
+  "rightColumn": 64,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "REGULAR",
+  "isVisible": true,
+  "key": "a919f6c116",
+  "overflow": "NONE",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "shouldTruncate": false,
+  "text": "{{q_ultimo_albaran.data[0] ? q_ultimo_albaran.data[0].estado : ''}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "7b6ac91be6",
+  "widgetName": "Ultimo_Albaran_Estado"
+}

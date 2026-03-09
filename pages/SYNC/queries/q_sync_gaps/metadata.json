@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Días sin albaranes en los últimos 30 días (detecta gaps de sync)\r\nWITH dias AS (\r\n  SELECT generate_series(\r\n    CURRENT_DATE - INTERVAL '29 days',\r\n    CURRENT_DATE,\r\n    INTERVAL '1 day'\r\n  )::date AS dia\r\n),\r\nactividad AS (\r\n  SELECT fecha::date AS dia, COUNT(*)::int AS num_albaranes\r\n  FROM public.albaranes\r\n  WHERE fecha >= CURRENT_DATE - INTERVAL '29 days'\r\n  GROUP BY fecha::date\r\n)\r\nSELECT\r\n  d.dia,\r\n  TO_CHAR(d.dia, 'Day DD/MM') AS dia_label,\r\n  EXTRACT(DOW FROM d.dia)::int AS dia_semana,\r\n  COALESCE(a.num_albaranes, 0) AS num_albaranes,\r\n  CASE\r\n    WHEN EXTRACT(DOW FROM d.dia) IN (0,6) THEN 'fin_semana'\r\n    WHEN COALESCE(a.num_albaranes, 0) = 0 THEN 'sin_actividad'\r\n    ELSE 'normal'\r\n  END AS tipo_dia\r\nFROM dias d\r\nLEFT JOIN actividad a ON d.dia = a.dia\r\nORDER BY d.dia ASC;\r\n",
+      "body": "SELECT\n    gs::date AS dia,\n    COUNT(DISTINCT r.id)::int AS registros_sincronizados\nFROM generate_series(CURRENT_DATE - INTERVAL '30 days', CURRENT_DATE, INTERVAL '1 day') AS gs\nLEFT JOIN raw.stel_raw r ON r.ingested_at::date = gs::date\nGROUP BY dia\nORDER BY dia DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

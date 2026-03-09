@@ -1,0 +1,107 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 130,
+  "topRow": 92,
+  "leftColumn": 0,
+  "rightColumn": 30,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "dia",
+    "registros_sincronizados"
+  ],
+  "columnWidthMap": {
+    "dia": 150,
+    "registros_sincronizados": 150
+  },
+  "primaryColumns": {
+    "dia": {
+      "alias": "dia",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "dia",
+      "index": 0,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Dia",
+      "originalId": "dia",
+      "width": 150
+    },
+    "registros_sincronizados": {
+      "alias": "registros_sincronizados",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "registros_sincronizados",
+      "index": 1,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Registros",
+      "originalId": "registros_sincronizados",
+      "width": 150
+    }
+  },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "enableClientSideSearch": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isVisible": true,
+  "isSortable": true,
+  "key": "5ac760862f",
+  "multiRowSelection": false,
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "tableData": "{{q_sync_gaps.data}}",
+  "type": "TABLE_WIDGET_V2",
+  "version": 1,
+  "widgetId": "667efea75c",
+  "widgetName": "Tabla_Sync_Gaps",
+  "searchKey": "",
+  "isVisibleSearch": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleDownload": true
+}

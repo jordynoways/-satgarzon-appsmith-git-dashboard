@@ -1,0 +1,53 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowScroll": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 170,
+  "topRow": 122,
+  "leftColumn": 0,
+  "rightColumn": 64,
+  "chartData": {
+    "d0e9c2171d": {
+      "color": "{{appsmith.theme.colors.primaryColor}}",
+      "data": "{{q_evolucion_mensual.data.map(function(r){return {x: r.periodo, y: r.facturacion}})}}",
+      "seriesName": "Evolucion mensual"
+    }
+  },
+  "chartName": "Evolucion mensual",
+  "chartType": "LINE_CHART",
+  "customEChartConfig": "{}",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.d0e9c2171d.data"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "isVisible": true,
+  "key": "764e85a089",
+  "labelOrientation": "auto",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "showDataPointLabel": false,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "174a1cd1f8",
+  "widgetName": "Chart_Evolucion",
+  "xAxisName": "",
+  "yAxisName": ""
+}

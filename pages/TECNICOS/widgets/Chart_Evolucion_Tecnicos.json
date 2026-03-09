@@ -1,0 +1,53 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowScroll": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 110,
+  "topRow": 57,
+  "leftColumn": 0,
+  "rightColumn": 64,
+  "chartData": {
+    "0c3a761a13": {
+      "color": "{{appsmith.theme.colors.primaryColor}}",
+      "data": "{{q_tecnicos_evolucion.data.map(function(r){return {x: r.periodo + ' - ' + String(r.tecnico).split(' ')[0], y: r.facturacion}})}}",
+      "seriesName": "Evolucion 6 meses"
+    }
+  },
+  "chartName": "Evolucion 6 meses",
+  "chartType": "LINE_CHART",
+  "customEChartConfig": "{}",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.0c3a761a13.data"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "isVisible": true,
+  "key": "684aaf5c8c",
+  "labelOrientation": "auto",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "showDataPointLabel": false,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "3c901fdee0",
+  "widgetName": "Chart_Evolucion_Tecnicos",
+  "xAxisName": "",
+  "yAxisName": ""
+}

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- KPI: Albaranes creados hoy\r\nSELECT\r\n  COUNT(*)::int AS albaranes_hoy,\r\n  ROUND(COALESCE(SUM(importe_total), 0), 2) AS facturacion_hoy\r\nFROM public.albaranes\r\nWHERE fecha::date = CURRENT_DATE;\r\n",
+      "body": "SELECT COUNT(*)::int AS albaranes_hoy\nFROM core.documents\nWHERE document_type = 'delivery_note_work'\n    AND document_date = CURRENT_DATE;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Resumen de técnicos del mes actual\r\n-- Fuente: albaranes JOIN empleados_stel_clean por creado_por_id\r\nSELECT\r\n  COALESCE(e.nombre_completo, 'Técnico ' || a.creado_por_id::text) AS tecnico,\r\n  COUNT(*)::int AS num_partes,\r\n  ROUND(SUM(a.importe_total), 2) AS facturacion_generada,\r\n  ROUND(AVG(a.importe_total), 2) AS media_por_parte,\r\n  MIN(a.importe_total) AS parte_minimo,\r\n  MAX(a.importe_total) AS parte_maximo,\r\n  -- Distribución por estado\r\n  COUNT(CASE WHEN est.nombre = 'Facturado' THEN 1 END)::int AS partes_facturados,\r\n  COUNT(CASE WHEN est.nombre = 'Pendiente de facturar' THEN 1 END)::int AS partes_pendientes\r\nFROM public.albaranes a\r\nLEFT JOIN public.empleados_stel_clean e ON a.creado_por_id::text = e.id_stel\r\nLEFT JOIN public.estados_documento est ON a.estado_id = est.id_stel\r\nWHERE a.fecha >= date_trunc('month', CURRENT_DATE)\r\n  AND a.fecha < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'\r\nGROUP BY COALESCE(e.nombre_completo, 'Técnico ' || a.creado_por_id::text)\r\nORDER BY facturacion_generada DESC;\r\n",
+      "body": "SELECT\n    CASE creator_id::text\n        WHEN '1' THEN 'Jorge Garzón'\n        WHEN '23196' THEN 'Daniel Garzón'\n        WHEN '190' THEN 'Marco Garzón'\n    END AS tecnico,\n    COUNT(*)::int AS num_albaranes,\n    ROUND(SUM(total_amount), 2) AS facturacion\nFROM core.documents\nWHERE document_type = 'delivery_note_work'\n    AND creator_id::text IN ('1', '23196', '190')\n    AND document_date >= date_trunc('month', CURRENT_DATE)\nGROUP BY creator_id\nORDER BY facturacion DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

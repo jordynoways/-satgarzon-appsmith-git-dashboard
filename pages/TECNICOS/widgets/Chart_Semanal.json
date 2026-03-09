@@ -1,0 +1,53 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowScroll": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "bottomRow": 55,
+  "topRow": 10,
+  "leftColumn": 32,
+  "rightColumn": 64,
+  "chartData": {
+    "4017aa056a": {
+      "color": "{{appsmith.theme.colors.primaryColor}}",
+      "data": "{{q_tecnicos_semanal.data.map(function(r){return {x: String(r.semana).slice(0,10) + ' ' + String(r.tecnico).split(' ')[0], y: r.facturacion}})}}",
+      "seriesName": "Por semana"
+    }
+  },
+  "chartName": "Por semana",
+  "chartType": "BAR_CHART",
+  "customEChartConfig": "{}",
+  "dynamicBindingPathList": [
+    {
+      "key": "chartData.4017aa056a.data"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "isVisible": true,
+  "key": "d538f4a9f9",
+  "labelOrientation": "auto",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "showDataPointLabel": false,
+  "type": "CHART_WIDGET",
+  "version": 1,
+  "widgetId": "082d40e7f0",
+  "widgetName": "Chart_Semanal",
+  "xAxisName": "",
+  "yAxisName": ""
+}

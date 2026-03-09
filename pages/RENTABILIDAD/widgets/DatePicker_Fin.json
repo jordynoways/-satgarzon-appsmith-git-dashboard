@@ -1,0 +1,48 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "boxShadow": "none",
+  "bottomRow": 22,
+  "topRow": 10,
+  "leftColumn": 22,
+  "rightColumn": 42,
+  "closeOnSelection": true,
+  "dateFormat": "YYYY-MM-DD",
+  "defaultDate": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": 1,
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "isDisabled": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "0beb420258",
+  "label": "DatePicker_Fin",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "minDate": "1920-12-31T18:30:00.000Z",
+  "maxDate": "2121-12-31T00:00:00.000Z",
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "shortcuts": false,
+  "timePrecision": "None",
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "1b64678a2c",
+  "widgetName": "DatePicker_Fin"
+}

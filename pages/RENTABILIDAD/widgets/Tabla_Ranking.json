@@ -1,0 +1,158 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 120,
+  "topRow": 72,
+  "leftColumn": 0,
+  "rightColumn": 64,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "cliente",
+    "segmento",
+    "num_partes",
+    "facturacion_total",
+    "media_por_parte"
+  ],
+  "columnWidthMap": {
+    "cliente": 250,
+    "segmento": 100,
+    "num_partes": 100,
+    "facturacion_total": 150,
+    "media_por_parte": 150
+  },
+  "primaryColumns": {
+    "cliente": {
+      "alias": "cliente",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "cliente",
+      "index": 0,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Cliente",
+      "originalId": "cliente",
+      "width": 250
+    },
+    "segmento": {
+      "alias": "segmento",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "segmento",
+      "index": 1,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Segmento",
+      "originalId": "segmento",
+      "width": 100
+    },
+    "num_partes": {
+      "alias": "num_partes",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "num_partes",
+      "index": 2,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Partes",
+      "originalId": "num_partes",
+      "width": 100
+    },
+    "facturacion_total": {
+      "alias": "facturacion_total",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "facturacion_total",
+      "index": 3,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Facturacion EUR",
+      "originalId": "facturacion_total",
+      "width": 150
+    },
+    "media_por_parte": {
+      "alias": "media_por_parte",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "media_por_parte",
+      "index": 4,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Media/parte EUR",
+      "originalId": "media_por_parte",
+      "width": 150
+    }
+  },
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "delimiter": ",",
+  "enableClientSideSearch": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isVisible": true,
+  "isSortable": true,
+  "key": "293ecd0e3b",
+  "multiRowSelection": false,
+  "parentId": "0",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "tableData": "{{q_rentabilidad_ranking.data}}",
+  "type": "TABLE_WIDGET_V2",
+  "version": 1,
+  "widgetId": "bb3834c3cf",
+  "widgetName": "Tabla_Ranking",
+  "searchKey": "",
+  "isVisibleSearch": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleDownload": true
+}

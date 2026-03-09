@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- Lista de estados para el dropdown de filtros\r\nSELECT\r\n  id_stel,\r\n  nombre,\r\n  color\r\nFROM public.estados_documento\r\nORDER BY nombre ASC;\r\n",
+      "body": "SELECT unnest(ARRAY[\n    'Pendiente de facturar',\n    'Facturado',\n    'Cerrado',\n    'Aprobado',\n    'COMPROBADO POR GEMINI',\n    'Garantia',\n    'Entra en mantenimiento'\n]) AS nombre;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
