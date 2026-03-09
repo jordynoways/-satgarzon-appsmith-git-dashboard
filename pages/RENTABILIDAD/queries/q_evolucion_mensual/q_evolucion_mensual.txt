@@ -1,11 +1,10 @@
--- Evolución mensual de facturación (últimos 12 meses) - para gráfico de líneas
 SELECT
-  TO_CHAR(date_trunc('month', fecha), 'YYYY-MM') AS mes,
-  TO_CHAR(date_trunc('month', fecha), 'Mon YY') AS mes_label,
-  COUNT(*)::int AS num_partes,
-  ROUND(SUM(importe_total), 2) AS facturacion,
-  ROUND(AVG(importe_total), 2) AS media_parte
-FROM public.albaranes
-WHERE fecha >= date_trunc('month', CURRENT_DATE) - INTERVAL '11 months'
-GROUP BY date_trunc('month', fecha)
-ORDER BY date_trunc('month', fecha) ASC;
+    year,
+    month,
+    TO_CHAR(TO_DATE(year::text || '-' || LPAD(month::text, 2, '0') || '-01', 'YYYY-MM-DD'), 'Mon YYYY') AS periodo,
+    SUM(invoice_count)::int AS num_albaranes,
+    ROUND(SUM(total_amount), 2) AS facturacion
+FROM mart.customer_month_summary
+WHERE (year * 12 + month) >= (EXTRACT(YEAR FROM CURRENT_DATE)::int * 12 + EXTRACT(MONTH FROM CURRENT_DATE)::int - 12)
+GROUP BY year, month
+ORDER BY year, month;

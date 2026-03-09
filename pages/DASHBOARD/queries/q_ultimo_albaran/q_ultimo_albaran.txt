@@ -1,8 +1,17 @@
--- Último albaran y estado de sincronización
 SELECT
-  MAX(fecha)::date AS ultimo_albaran_fecha,
-  MAX(ultima_actualizacion) AS ultima_sync,
-  ROUND(EXTRACT(EPOCH FROM (NOW() - MAX(ultima_actualizacion))) / 3600, 1) AS horas_desde_sync,
-  COUNT(CASE WHEN fecha::date = CURRENT_DATE THEN 1 END)::int AS albaranes_hoy,
-  COUNT(CASE WHEN fecha >= date_trunc('week', CURRENT_DATE) THEN 1 END)::int AS albaranes_semana
-FROM public.albaranes;
+    d.document_number AS referencia,
+    COALESCE(c.name, '—') AS cliente,
+    d.document_date AS fecha,
+    d.total_amount AS importe,
+    CASE d.document_state_id
+        WHEN 87 THEN 'Pendiente de facturar'
+        WHEN 82 THEN 'Facturado'
+        WHEN 124 THEN 'Cerrado'
+        WHEN 969948 THEN 'Aprobado'
+        ELSE 'Estado ' || COALESCE(d.document_state_id::text, '—')
+    END AS estado
+FROM core.documents d
+LEFT JOIN core.customers c ON d.customer_id = c.id
+WHERE d.document_type = 'delivery_note_work'
+ORDER BY d.document_date DESC, d.id DESC
+LIMIT 1;

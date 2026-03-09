@@ -1,23 +1,28 @@
--- Total de la selección actual (para el stat box debajo de la tabla)
--- Usa los mismos filtros que q_albaranes
--- Widgets: Filtro_Fecha, Filtro_Estado, Busqueda (opcionales)
 SELECT
-  COUNT(*)::int AS num_resultados,
-  ROUND(COALESCE(SUM(a.importe_total), 0), 2) AS total_filtrado
-FROM public.albaranes a
-LEFT JOIN public.clientes c ON a.cliente_id_stel::text = c.id_stel::text
-LEFT JOIN public.estados_documento est ON a.estado_id = est.id_stel
-WHERE
-  ({{Filtro_Fecha.selectedDate}} IS NULL OR a.fecha::date >= {{Filtro_Fecha.selectedDate}}::date)
-  AND (
-    {{Filtro_Estado.selectedOptionValue}} IS NULL
-    OR {{Filtro_Estado.selectedOptionValue}} = ''
-    OR est.nombre = {{Filtro_Estado.selectedOptionValue}}
-  )
-  AND (
-    {{Busqueda.text}} IS NULL
-    OR {{Busqueda.text}} = ''
-    OR a.titulo ILIKE '%' || {{Busqueda.text}} || '%'
-    OR COALESCE(c.nombre_fiscal, a.cliente_nombre, '') ILIKE '%' || {{Busqueda.text}} || '%'
-    OR a.referencia ILIKE '%' || {{Busqueda.text}} || '%'
-  );
+    COUNT(*)::int AS num_resultados,
+    ROUND(COALESCE(SUM(d.total_amount), 0), 2) AS total_filtrado
+FROM core.documents d
+LEFT JOIN core.customers c ON d.customer_id = c.id
+WHERE d.document_type = 'delivery_note_work'
+    AND ({{Filtro_Fecha.selectedDate}} IS NULL OR d.document_date >= {{Filtro_Fecha.selectedDate}}::date)
+    AND (
+        {{Filtro_Estado.selectedOptionValue}} IS NULL
+        OR {{Filtro_Estado.selectedOptionValue}} = ''
+        OR CASE d.document_state_id
+            WHEN 87 THEN 'Pendiente de facturar'
+            WHEN 82 THEN 'Facturado'
+            WHEN 124 THEN 'Cerrado'
+            WHEN 969948 THEN 'Aprobado'
+            WHEN 1458062 THEN 'COMPROBADO POR GEMINI'
+            WHEN 283014 THEN 'Garantia'
+            WHEN 283015 THEN 'Entra en mantenimiento'
+            ELSE 'Estado ' || COALESCE(d.document_state_id::text, '—')
+        END = {{Filtro_Estado.selectedOptionValue}}
+    )
+    AND (
+        {{Busqueda.text}} IS NULL
+        OR {{Busqueda.text}} = ''
+        OR d.document_number ILIKE '%' || {{Busqueda.text}} || '%'
+        OR COALESCE(c.name, '') ILIKE '%' || {{Busqueda.text}} || '%'
+        OR COALESCE(d.notes, '') ILIKE '%' || {{Busqueda.text}} || '%'
+    );
