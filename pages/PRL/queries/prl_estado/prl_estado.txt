@@ -1,0 +1,22 @@
+SELECT
+  id,
+  plataforma,
+  tipo_documento,
+  fecha_caducidad,
+  tecnico,
+  notas,
+  CASE
+    WHEN fecha_caducidad IS NULL THEN '⚫ Sin fecha'
+    WHEN fecha_caducidad < CURRENT_DATE THEN '🔴 CADUCADO'
+    WHEN fecha_caducidad <= CURRENT_DATE + INTERVAL '30 days' THEN '🟡 Próximo'
+    ELSE '🟢 Vigente'
+  END AS estado,
+  CASE
+    WHEN fecha_caducidad IS NOT NULL THEN (fecha_caducidad - CURRENT_DATE)::int
+    ELSE NULL
+  END AS dias_restantes
+FROM garci_ops.prl_plataformas
+WHERE activo = true
+ORDER BY
+  CASE WHEN fecha_caducidad IS NULL THEN 2 ELSE 1 END,
+  fecha_caducidad ASC;

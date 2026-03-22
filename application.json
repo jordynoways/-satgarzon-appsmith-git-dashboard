@@ -44,6 +44,10 @@
     {
       "id": "NOMINAS",
       "isDefault": false
+    },
+    {
+      "id": "PRL",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
