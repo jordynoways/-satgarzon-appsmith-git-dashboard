@@ -1,0 +1,1 @@
+SELECT id, tecnico, fecha_inicio::date, fecha_fin::date, horas_viernes, horas_sabado, horas_domingo, importe_disponibilidad, importe_horas, importe_plus, total_neto, estado, notas FROM garci_ops.guardias WHERE id != 2 ORDER BY fecha_inicio DESC

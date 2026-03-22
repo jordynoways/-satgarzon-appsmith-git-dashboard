@@ -1,0 +1,23 @@
+{
+  "bottomRow": 4,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontSize": "HEADING1",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 0,
+  "parentColumnSpace": 19.125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "text": "🛡️ GUARDIAS GARZÓN — Liquidación 2026",
+  "textAlign": "LEFT",
+  "textColor": "#1a1a2e",
+  "topRow": 0,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "title_guardias_001",
+  "widgetName": "Text_Titulo"
+}

@@ -1,0 +1,35 @@
+{
+  "bottomRow": 37,
+  "defaultModel": "{{ { guardias: guardias_liquidacionQuery1.data } }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "model"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "events": [],
+  "isLoading": false,
+  "isVisible": true,
+  "leftColumn": 0,
+  "model": "{\"guardias\":[]}",
+  "parentColumnSpace": 19.125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "srcDoc": {
+    "css": "*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}body{background:#f8f9fa;padding:12px;font-size:13px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.htxt{text-align:center}.htxt h3{font-size:11px;color:#6c757d;margin-bottom:2px}.htxt h2{font-size:18px;font-weight:700;color:#1a1a2e}.btn{background:#e9ecef;border:none;border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:20px;line-height:1}.btn:hover{background:#dee2e6}.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.dlabel{text-align:center;font-size:11px;font-weight:600;color:#6c757d;padding:6px 0}.dlabel.wknd{color:#e07b39}.cell{min-height:62px;background:#fff;border-radius:6px;padding:5px;border:1px solid #e9ecef}.cell.empty{background:transparent;border:none}.cell.garzon{background:#fff3e0;border-color:#f09a40}.cell.today{box-shadow:0 0 0 2px #4a90d9}.daynum{font-size:13px;font-weight:600;color:#343a40}.cell.garzon .daynum{color:#e07b39}.badge{display:inline-block;margin-top:3px;font-size:9px;padding:1px 5px;border-radius:10px;background:#e07b39;color:#fff;font-weight:700}.badge.reg{background:#27ae60}.legend{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}.li{display:flex;align-items:center;gap:5px;font-size:11px;color:#6c757d}.ld{width:12px;height:12px;border-radius:3px}",
+    "html": "<div class=\"hdr\"><button class=\"btn\" onclick=\"go(-1)\">&#8249;</button><div class=\"htxt\"><div class=\"htxt h3\" style=\"font-size:11px;color:#6c757d;margin-bottom:2px\">Rotacion WashTec Madrid 2026</div><div id=\"title\" class=\"htxt h2\"></div></div><button class=\"btn\" onclick=\"go(1)\">&#8250;</button></div><div class=\"grid\" id=\"grid\"></div><div class=\"legend\"><div class=\"li\"><div class=\"ld\" style=\"background:#fff3e0;border:1px solid #f09a40\"></div>Guardia Garzon</div><div class=\"li\"><div class=\"ld\" style=\"background:#27ae60\"></div>Registrada BBDD</div></div>",
+    "js": "const G=new Set(['2026-01-03','2026-01-04','2026-01-24','2026-01-25','2026-01-31','2026-02-01','2026-02-14','2026-02-15','2026-02-28','2026-03-01','2026-03-14','2026-03-15','2026-03-28','2026-03-29','2026-04-11','2026-04-12','2026-04-25','2026-04-26','2026-05-09','2026-05-10','2026-05-23','2026-05-24','2026-06-06','2026-06-07','2026-06-20','2026-06-21']);\nconst M=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];\nconst D=['Lun','Mar','Mie','Jue','Vie','Sab','Dom'];\nlet tecMap={}, yr=new Date().getFullYear(), mo=new Date().getMonth();\nfunction pad(n){return String(n).padStart(2,'0')}\nfunction buildMap(data){tecMap={};(data||[]).forEach(g=>{const s=new Date(g.fecha_inicio),e=new Date(g.fecha_fin);for(let d=new Date(s);d<=e;d.setDate(d.getDate()+1)){tecMap[d.toISOString().slice(0,10)]=g.tecnico}});}\nfunction render(){document.getElementById('title').textContent=M[mo]+' '+yr;const grid=document.getElementById('grid');grid.innerHTML='';D.forEach((d,i)=>{const e=document.createElement('div');e.className='dlabel'+(i>=5?' wknd':'');e.textContent=d;grid.appendChild(e)});const fd=new Date(yr,mo,1).getDay(),off=fd===0?6:fd-1,dim=new Date(yr,mo+1,0).getDate(),today=new Date().toISOString().slice(0,10);for(let i=0;i<off;i++){const e=document.createElement('div');e.className='cell empty';grid.appendChild(e);}for(let d=1;d<=dim;d++){const ds=yr+'-'+pad(mo+1)+'-'+pad(d),isG=G.has(ds),tec=tecMap[ds],isT=(ds===today);const e=document.createElement('div');e.className='cell'+(isG||tec?' garzon':'')+(isT?' today':'');const n=document.createElement('div');n.className='daynum';n.textContent=d;e.appendChild(n);if(tec){const b=document.createElement('span');b.className='badge reg';b.textContent=tec;e.appendChild(b);}else if(isG){const b=document.createElement('span');b.className='badge';b.textContent='Garzon';e.appendChild(b);}grid.appendChild(e);}}\nfunction go(dir){mo+=dir;if(mo<0){mo=11;yr--;}if(mo>11){mo=0;yr++;}render();}\nappsmith.onReady(()=>{buildMap(appsmith.model.guardias);render();});\nappsmith.onModelChange(m=>{buildMap(m.guardias);render();});"
+  },
+  "topRow": 5,
+  "type": "CUSTOM_WIDGET",
+  "version": 1,
+  "widgetId": "calendar_guardias_001",
+  "widgetName": "Calendario_Guardias"
+}

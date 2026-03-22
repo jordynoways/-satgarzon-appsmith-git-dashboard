@@ -36,6 +36,10 @@
     {
       "id": "SYNC",
       "isDefault": false
+    },
+    {
+      "id": "GUARDIASPage1",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
