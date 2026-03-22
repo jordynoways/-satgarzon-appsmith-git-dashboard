@@ -48,6 +48,10 @@
     {
       "id": "PRL",
       "isDefault": false
+    },
+    {
+      "id": "WASHTEC",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

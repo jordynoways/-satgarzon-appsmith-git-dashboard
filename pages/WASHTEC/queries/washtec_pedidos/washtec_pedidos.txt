@@ -1,0 +1,17 @@
+SELECT
+    id,
+    detalle AS pedido_sap,
+    estado,
+    dias_abierto,
+    to_char(created_at AT TIME ZONE 'Europe/Madrid', 'DD/MM/YYYY HH24:MI') AS recibido,
+    CASE estado
+      WHEN 'recibido' THEN '🟡 Pendiente'
+      WHEN 'procesando' THEN '🔵 En proceso'
+      WHEN 'completado' THEN '🟢 Completado'
+      WHEN 'error' THEN '🔴 Error'
+      ELSE estado
+    END AS semaforo
+  FROM garci_ops.cola_trabajo
+  WHERE tipo = 'pedido' AND cliente = 'WashTec'
+  ORDER BY created_at DESC
+  LIMIT 50

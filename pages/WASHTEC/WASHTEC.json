@@ -1,0 +1,30 @@
+{
+  "gitSyncId": "69af379e89cbb302cdbb9563_14285bc2-3357-4cb3-ae5e-65574660cbe6",
+  "unpublishedPage": {
+    "layouts": [
+      {
+        "dsl": {
+          "bottomRow": 2080,
+          "dynamicBindingPathList": [],
+          "isLoading": false,
+          "isVisible": true,
+          "leftColumn": 0,
+          "parentColumnSpace": 1,
+          "parentId": "",
+          "parentRowSpace": 1,
+          "renderMode": "CANVAS",
+          "rightColumn": 256,
+          "snapColumns": 64,
+          "snapRows": 99,
+          "topRow": 0,
+          "type": "CANVAS_WIDGET",
+          "version": 94,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "WASHTEC",
+    "slug": "washtec"
+  }
+}

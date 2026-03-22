@@ -1,0 +1,11 @@
+SELECT
+    id,
+    order_number AS aviso_sap,
+    LEFT(trabajos, 120) AS trabajos,
+    to_char(received_at AT TIME ZONE 'Europe/Madrid', 'DD/MM/YYYY') AS fecha,
+    CASE WHEN stel_updated THEN '🟢 En STEL' ELSE '🟡 Pendiente STEL' END AS estado_stel,
+    albaran_stel_id,
+    notes
+  FROM core.washtec_reports
+  ORDER BY received_at DESC
+  LIMIT 50
