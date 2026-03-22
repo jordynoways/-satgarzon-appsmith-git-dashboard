@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  id,\n  plataforma,\n  tipo_documento,\n  fecha_caducidad,\n  tecnico,\n  notas,\n  CASE\n    WHEN fecha_caducidad IS NULL THEN '⚫ Sin fecha'\n    WHEN fecha_caducidad < CURRENT_DATE THEN '🔴 CADUCADO'\n    WHEN fecha_caducidad <= CURRENT_DATE + INTERVAL '30 days' THEN '🟡 Próximo'\n    ELSE '🟢 Vigente'\n  END AS estado,\n  CASE\n    WHEN fecha_caducidad IS NOT NULL THEN (fecha_caducidad - CURRENT_DATE)::int\n    ELSE NULL\n  END AS dias_restantes\nFROM garci_ops.prl_plataformas\nWHERE activo = true\nORDER BY\n  CASE WHEN fecha_caducidad IS NULL THEN 2 ELSE 1 END,\n  fecha_caducidad ASC;",
+      "body": "SELECT\n  descripcion,\n  trabajador,\n  tipo,\n  cliente,\n  plataforma,\n  to_char(fecha_caducidad, 'DD/MM/YYYY') AS fecha_caducidad,\n  notas,\n  CASE\n    WHEN fecha_caducidad IS NULL THEN '⚫ Sin fecha'\n    WHEN fecha_caducidad < CURRENT_DATE THEN '🔴 Caducado'\n    WHEN fecha_caducidad <= CURRENT_DATE + INTERVAL '30 days' THEN '🟡 Próximo'\n    ELSE '🟢 Vigente'\n  END AS semaforo,\n  CASE\n    WHEN fecha_caducidad IS NOT NULL THEN (fecha_caducidad - CURRENT_DATE)::int\n    ELSE NULL\n  END AS dias_restantes\nFROM garci_ops.documentacion_prl\nORDER BY\n  CASE\n    WHEN fecha_caducidad IS NULL THEN 3\n    WHEN fecha_caducidad < CURRENT_DATE THEN 0\n    WHEN fecha_caducidad <= CURRENT_DATE + INTERVAL '30 days' THEN 1\n    ELSE 2\n  END,\n  fecha_caducidad ASC NULLS LAST",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
