@@ -1,0 +1,10 @@
+SELECT
+  to_char(date_trunc('month', fecha_inicio), 'YYYY-MM') AS mes,
+  tecnico,
+  CASE WHEN tecnico = 'Daniel' THEN 1600 WHEN tecnico = 'Marco' THEN 3300 ELSE 0 END AS salario_base,
+  SUM(total_neto) AS guardia_total,
+  CASE WHEN tecnico = 'Daniel' THEN 1600 WHEN tecnico = 'Marco' THEN 3300 ELSE 0 END + SUM(total_neto) AS total_nomina
+FROM garci_ops.guardias
+WHERE id != 2
+GROUP BY date_trunc('month', fecha_inicio), tecnico
+ORDER BY mes DESC, tecnico

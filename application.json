@@ -40,6 +40,10 @@
     {
       "id": "GUARDIASPage1",
       "isDefault": false
+    },
+    {
+      "id": "NOMINAS",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

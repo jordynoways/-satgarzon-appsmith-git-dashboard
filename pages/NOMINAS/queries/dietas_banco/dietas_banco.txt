@@ -1,0 +1,1 @@
+SELECT to_char(mes, 'MM/YYYY') AS mes_display, tecnico, importe, periodo_inicio, periodo_fin, notas FROM garci_ops.dietas ORDER BY mes DESC, tecnico

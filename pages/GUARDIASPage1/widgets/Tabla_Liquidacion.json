@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 72,
+  "bottomRow": 85,
   "columnOrder": [
     "id",
     "tecnico1",
@@ -525,7 +525,7 @@
   "renderMode": "CANVAS",
   "rightColumn": 64,
   "tableData": "{{guardias_liquidacionQuery1.data}}",
-  "topRow": 38,
+  "topRow": 51,
   "type": "TABLE_WIDGET_V2",
   "version": 1,
   "widgetId": "table_liquidacion_001",

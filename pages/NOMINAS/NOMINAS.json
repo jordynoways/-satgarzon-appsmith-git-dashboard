@@ -1,12 +1,11 @@
 {
-  "gitSyncId": "69af379e89cbb302cdbb9563_aba7bb10-7fb5-4e61-82e8-4d6917556556",
+  "gitSyncId": "69af379e89cbb302cdbb9563_882304bf-acca-4970-bd4d-0f330c45a22d",
   "unpublishedPage": {
-    "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 850,
+          "bottomRow": 540,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -26,7 +25,7 @@
         }
       }
     ],
-    "name": "GUARDIASPage1",
-    "slug": "guardiaspage1"
+    "name": "NOMINAS",
+    "slug": "nominas"
   }
 }
